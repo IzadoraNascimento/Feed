@@ -1,4 +1,15 @@
+import { useState } from "react";
+import Message from "../Message";
+import Comment from "../Comment";
+
 export default function Forms() {
+  // state -> [valor, funçãoModificadora]
+  const[commentText, setcommentText] = useState("")
+  function handleClick(ev){
+    console.log(ev)
+    setcommentText(Comment)
+  }
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -47,9 +58,11 @@ export default function Forms() {
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                onClick={handleClick}
               >
                 Enviar comentario
               </button>
+              {commentText}
             </div>
           </form>
         </div>
