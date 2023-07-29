@@ -1,23 +1,25 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export default function Forms() {
   // state -> [valor, funçãoModificadora]
-  const [email, setEmail] = useState('');
-  const [text, setText] = useState('');
+  const [email, setEmail] = useState("");
+  const [text, setText] = useState("");
+  const [comments, setComments] = useState([]);
   
-  const handleChangeEmail = (ev) => {
-    setEmail(ev.target.value);
-  }
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
 
-  const handleChangeText = (ev) => {
-    setText(ev.target.value)
-  }
+    const newComment = {
+      id: Math.floor(Math.random * 1000000),
+      email,
+      text,
+      createdAt: new Date()
+    }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(email, text);
-    setEmail('');
-    setText('');
+    // renderiza na telao novo comentário depois, todos os antigos
+    setComments((state) => [newComment, ...state])
+    setEmail("");
+    setText("");
   };
 
 
@@ -44,29 +46,29 @@ export default function Forms() {
                   required
                   className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                   value={email}
-                  onChange={handleChangeEmail}
+                  onChange={(ev) => setEmail(ev.target.value)}
                 />
               </div>
             </div>
 
             <div>
               <label htmlFor="text" className="block text-sm font-medium leading-6 text-gray-900">
-                  Comentário
+                Comentário
               </label>
-                  <textarea
-                    class="
-                      mt-1
-                      block
-                      w-full
-                      rounded-md
-                      border-0
-                      shadow-sm
-                      shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6
-                    "
-                    rows="3"
-                    value={text}
-                    onChange={handleChangeText}
-                  ></textarea>
+              <textarea
+                className="
+                  mt-1
+                  block
+                  w-full
+                  rounded-md
+                  border-0
+                  shadow-sm
+                  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6
+                "
+                rows="3"
+                value={text}
+                onChange={(ev) => setText(ev.target.value)}
+              ></textarea>
             </div>
 
             <div>
@@ -78,6 +80,21 @@ export default function Forms() {
               </button>
             </div>
           </form>
+
+          <section className="mt-6 text-sm font-medium">
+              {comments.length > 0
+               ? (
+                comments.map((comment) => (
+                  <div key={comment.id}>
+                    <h3>{comment.email}</h3>
+                    <span>Em {comment.createdAt.toLocaleString()}</span>
+                    <p>{comment.text}</p>
+                  </div>
+                ))
+               ) : (
+                  <p>Seja o primeiro a comentar!</p>
+               )}
+          </section>
         </div>
       </div>
     </>
