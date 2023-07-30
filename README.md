@@ -1,6 +1,6 @@
 ## Índice
 
-- Visão geral
+- [Visão geral](#visão-geral)
    - [Descrição](#descrição)
    - [Captura de tela](#captura-de-tela)
 - [Meu processo](#meu-processo)
@@ -37,7 +37,7 @@ Para a construção do projeto, adotei a abordagem do método Dividir para Conqu
 
 
 ### Link para acessar o site - 
-[Feed](https://testimony-izadora.netlify.app/)
+[Feed](https://feed-comment.netlify.app/)
 
 ### Construído com
 
