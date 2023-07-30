@@ -1,8 +1,8 @@
 ## Índice
 
 - [Visão geral]
-   - [O desafio](#o-desafio)
-   - [Captura de tela]
+   - [Descrição](#descrição)
+   - [Captura de tela](#captura-de-tela)
 - [Meu processo](#meu-processo)
    - [Construído com]
    - [O que aprendi](#o-que-aprendi)
@@ -12,38 +12,47 @@
 
 ## Visão geral
 
-### O desafio
+### Descrição
 
 Os usuários devem ser capazes de:
 
-- Veja o layout ideal para o componente, dependendo do tamanho da tela do dispositivo
-- Navegue pelo controle deslizante usando o mouse/trackpad.
+- Ver o layout ideal para o componente, dependendo do tamanho da tela do dispositivo
+- Preencher o formulário com e-mail e o comentário que deseja enviar
+- Visualizar o Feed com os comentários
+- Comentários ordenados do mais novo para os mais antigos
 
 ### Captura de tela
 
-![Tablet](./Feed-tablet.png)
+![Tablet](https://github.com/IzadoraNascimento/Feed/blob/master/src/assets/Feed-tablet.png)
+![Mobile](https://github.com/IzadoraNascimento/Feed/blob/master/src/assets/Feed-mobile.png)
+![Formulário](https://github.com/IzadoraNascimento/Feed/blob/master/src/assets/Feed-formulário.png)
+![Comentário](https://github.com/IzadoraNascimento/Feed/blob/master/src/assets/Feed-comentário.png)
 
 ## Meu processo
 
+Para a construção do projeto, adotei a abordagem do método Dividir para Conquistar, o que me permitiu uma organização mais eficiente e um melhor controle de todos os processos e etapas envolvidas. Todas as tarefas foram devidamente registradas e acompanhadas através da plataforma Notion.
+
+![Notion](https://github.com/IzadoraNascimento/Feed/blob/master/src/assets/Notion.png)
+
+
+
 ### Link para acessar o site - 
-[Testimony](https://testimony-izadora.netlify.app/)
+[Feed](https://testimony-izadora.netlify.app/)
 
 ### Construído com
 
 - Marcação HTML5 semântica
-- Propriedades personalizadas CSS
-- Flexbox
+- TailwindCSS
 - Mobile First
 - [React](https://reactjs.org/) - Biblioteca JS
-- [Componentes estilizados](https://styled-components.com/) - Para estilos
 
 ### O que eu aprendi
 
-Instalação do React + Vite, uso de boas práticas com os componentes, utilização das props, e estilização da página com o CSS em arquivo module.css separado. Apliquei ao projeto também a responsividade a partir do Mobile first. 
+Instalação do TailwindCSS e suas propriedades. Uso dos states para controlar os inputs, hooks (useState) além da renderização de lista de dados. 
 
 ### Desenvolvimento contínuo
 
-Continuar usando o React e aplicar mais funcionalidades com o JavaScript. 
+Continuar usando o React e aplicar mais funcionalidades com o JavaScript, uso de SPA e integração com uma API. 
 
 ### Recursos úteis
 
